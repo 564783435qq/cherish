@@ -3,7 +3,32 @@
 2.下载mysql
 
 3.下载nacos
+Springboot集成nacos
 
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.11</version>
+        </dependency>
+新建bootstrap.yml文件
+spring:
+  application:
+    name: CommonConfig
+
+nacos:
+  config:
+    bootstrap:
+      enable: true
+    server-addr: xxx:xx
+    username: nacos
+    password: nacos
+    #文件后缀
+    file-extension: yaml
+    #指定分组
+    group: dev
+    #指定命名空间
+    namespace: IPDP
+    data-id: CommonConfig
 4.下载redis
 
 设计百科库
